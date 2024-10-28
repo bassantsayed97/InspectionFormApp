@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function inspectionForms()
+    {
+        return $this->hasMany(InspectionForm::class);
+    }
 }
