@@ -35,6 +35,11 @@ class InspectionForm extends Model
         return $this->belongsTo(User::class);
     }
 
-    
+    public function inspectionParameters()
+    {
+        return $this->hasMany(InspectionParameter::class);
+    }
+
+
 
 }
