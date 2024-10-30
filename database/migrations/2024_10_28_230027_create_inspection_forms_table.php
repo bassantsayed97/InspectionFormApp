@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('work_order_no');
             $table->string('customer_name');
             $table->string('production_order_no')->nullable();
-            $table->date('date');
+            $table->date('date')->nullable();
             $table->string('project')->nullable();
             $table->string('quality_inspector')->nullable();
             $table->string('signature')->nullable(); // For e-signature or file path

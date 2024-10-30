@@ -11,7 +11,7 @@ class UpdateInspectionFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,6 @@ class UpdateInspectionFormRequest extends FormRequest
             'work_order_no' => 'required|string|max:255',
             'customer_name' => 'required|string|max:255',
             'production_order_no' => 'nullable|string|max:255',
-            'date' => 'required|date',
             'project' => 'nullable|string|max:255',
             'quality_inspector' => 'nullable|string|max:255',
             'signature' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048', // File validation

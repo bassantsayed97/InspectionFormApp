@@ -18,6 +18,8 @@ class InspectionFormController extends Controller
 
     public function index()
     {
+        // dd(InspectionForm::all());
+
         $forms = $this->inspectionFormRepo->getAll();
         return view('inspection_forms.index', compact('forms'));
     }
@@ -35,8 +37,9 @@ class InspectionFormController extends Controller
 
     public function store(StoreInspectionFormRequest $request)
     {
-        $validatedData = $request->validated();
 
+        $validatedData = $request->validated();
+        // dd($request->all());
         // Handle file upload if provided
         if ($request->hasFile('signature')) {
             $file = $request->file('signature');

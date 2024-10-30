@@ -10,13 +10,14 @@ class InspectionForm extends Model
 {
     //
     use SoftDeletes , HasFactory ;
+    protected $table = 'inspection_forms';
 
     protected $fillable = [
-        'work_order_number',
+        'work_order_no',
         'customer_name',
         'production_order',
-        'inspection_date',
-        'project_name',
+        'date',
+        'project',
         'face_size',
         'neck_size',
         'thickness_out_of_tolerance',
