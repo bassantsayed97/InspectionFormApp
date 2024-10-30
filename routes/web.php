@@ -12,7 +12,7 @@ Route::get('/dashboard', function () {
     return view('pages.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('inspection_forms', InspectionFormController::class)->middleware(['auth', 'verified']);
+// Route::resource('inspection_forms', InspectionFormController::class)->middleware(['auth', 'verified']);
 
 
 Route::middleware('auth')->group(function () {
