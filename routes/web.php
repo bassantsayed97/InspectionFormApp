@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('inspection_forms', InspectionFormController::class);
-    Route::resource('inspection_parameters', InspectionParameterController::class);
+    // Route::resource('inspection_parameters', InspectionParameterController::class);
     Route::get('/inspection_forms/{inspectionFormId}/parameters', [InspectionParameterController::class, 'index'])
      ->name('inspection_parameters.index');
 
@@ -31,8 +31,18 @@ Route::middleware('auth')->group(function () {
     Route::post('/inspection_forms/{inspectionFormId}/parameters', [InspectionParameterController::class, 'store'])
     ->name('inspection_parameters.store');
 
-    Route::get('/inspection_forms/{inspectionFormId}/parameters/show', [InspectionParameterController::class, 'create'])
+    Route::get('/inspection_forms/{inspectionFormId}/parameters/{inspectionParameterId}', [InspectionParameterController::class, 'show'])
     ->name('inspection_parameters.show');
+
+    Route::get('/inspection_forms/{inspectionFormId}/parameters/{inspectionParameterId}/edit', [InspectionParameterController::class, 'edit'])
+    ->name('inspection_parameters.edit');
+
+    Route::put('/inspection_forms/{inspectionFormId}/parameters/{inspectionParameterId}', [InspectionParameterController::class, 'update'])
+    ->name('inspection_parameters.update');
+
+
+
+
 
 
 
