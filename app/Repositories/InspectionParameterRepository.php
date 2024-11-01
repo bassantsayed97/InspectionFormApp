@@ -11,7 +11,10 @@ class InspectionParameterRepository implements InspectionParameterRepositoryInte
     {
         return InspectionParameter::where('inspection_form_id', $formId)->get();
     }
-
+    public function getById($id)
+    {
+        return InspectionParameter::findOrFail($id);
+    }
     public function create(array $data)
     {
         return InspectionParameter::create($data);
