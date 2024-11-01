@@ -27,6 +27,9 @@
                             <td>{{ $form->customer_name }}</td>
                             <td>
                                 <a href="{{ route('inspection_forms.show', $form->id) }}" class="btn btn-info btn-sm">View</a>
+                                <a href="{{ route('inspection_parameters.index', ['inspectionFormId' => $form->id]) }}" class="btn btn-info btn-sm">View Parameters</a>
+                                <a href="{{ route('inspection_parameters.create', ['inspectionFormId' => $form->id]) }}" class="btn btn-primary btn-sm">Add Parameter</a>
+
                                 <a href="{{ route('inspection_forms.edit', $form->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                 <form action="{{ route('inspection_forms.destroy', $form->id) }}" method="POST" style="display:inline-block;">
                                     @csrf
